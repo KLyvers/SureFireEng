@@ -16,4 +16,4 @@ We offer a wide range of technical services including
 
 ### Support or Contact
 
-For inquiries send and email to github at SureFireEng.com
+For inquiries send and email to github *at* SureFireEng.com
