@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## SureFire Engineering
 
-You can use the [editor on GitHub](https://github.com/SherSlick/SureFireEng/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This repository will serve as the homebase for all custom code we publish.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Services
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+We offer a wide range of technical services including
+- Basic Information Technology support for your home or small business
+- Hosting and support of public cloud
+- Business email and website setup
+- Home Automation design and programming
+- Integrated physical security design and support
+- MUCH MORE
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SherSlick/SureFireEng/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+For inquiries send and email to github at SureFireEng.com
