@@ -16,16 +16,16 @@ We offer a wide range of technical services including
 ### Staff
 
 Kris Lyvers
--Director of Engineering
+- Director of Engineering
 
 Joel Wampler
--System Architect/Lead developer
+- System Architect/Lead developer
 
 Damon Sasso
--Systems Sngineer
+- Systems Sngineer
 
 Scott Austin
--Systems Engineer
+- Systems Engineer
 
 
 ### Support or Contact
