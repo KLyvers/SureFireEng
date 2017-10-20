@@ -13,6 +13,19 @@ We offer a wide range of technical services including
 - Integrated physical security design and support
 - MUCH MORE
 
+### Staff
+Kris Lyvers
+-Director of Engineering
+
+Joel Wampler
+-System Architect/Lead developer
+
+Damon Sasso
+-Systems Sngineer
+
+Scott Austin
+-Systems Engineer
+
 
 ### Support or Contact
 
