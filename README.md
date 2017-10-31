@@ -22,7 +22,7 @@ Joel Wampler
 - System Architect/Lead developer
 
 Damon Sasso
-- Systems Sngineer
+- Systems Engineer
 
 Scott Austin
 - Systems Engineer
