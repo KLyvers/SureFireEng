@@ -18,8 +18,8 @@ We offer a wide range of technical services including
 - Basic Information Technology support for your home or small business
 - Hosting and support of public cloud
 - Business email and website setup
-- Home Automation design and programming
-- Integrated physical security design and support
+- Cisco CUCM configuration
+- Network configuration of Cisco, Ubiquiti, Meraki
 - MUCH MORE
 
 ### Staff
