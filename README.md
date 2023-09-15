@@ -1,7 +1,5 @@
 ## SureFire Engineering
 
-This repository will serve as the homebase for all custom code we publish.
-
 <!-- TeamViewer Logo (generated at http://www.teamviewer.com) -->
 <div style="position:relative; width:200px; height:125px;">
   <a href="https://898.tv/sfeco" style="text-decoration:none;">
