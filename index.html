@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SureFire Engineering — IT & Managed Services | Denver, CO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --fire: #E8480C;
+    --fire-dark: #B33508;
+    --fire-light: #FBE9E0;
+    --coal: #1A1714;
+    --ash: #3D3830;
+    --smoke: #7A7368;
+    --mist: #F5F2EE;
+    --white: #FDFCFB;
+    --accent: #FF6B35;
+    --border: rgba(26,23,20,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--coal);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(253,252,251,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo .flame {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-logo span {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--coal);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--smoke);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--fire); }
+
+  .nav-cta {
+    background: var(--fire);
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--fire-dark) !important; color: white !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fire);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--fire);
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--coal);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--fire);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--smoke);
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--fire);
+    color: white;
+    text-decoration: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover { background: var(--fire-dark); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ash);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--fire); }
+
+  .btn-secondary svg { transition: transform 0.2s; }
+  .btn-secondary:hover svg { transform: translateX(3px); }
+
+  .hero-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--smoke);
+    margin-top: 2rem;
+    font-weight: 400;
+  }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mist);
+    overflow: hidden;
+  }
+
+  .hero-graphic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-stat-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    min-width: 240px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .stat-card:hover { transform: translateX(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+
+  .stat-card:nth-child(2) { margin-left: 2rem; }
+  .stat-card:nth-child(3) { margin-left: 1rem; }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--smoke);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--coal);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-desc {
+    font-size: 0.8rem;
+    color: var(--smoke);
+  }
+
+  .stat-card.featured { border-color: var(--fire); }
+  .stat-card.featured .stat-value { color: var(--fire); }
+
+  /* Decorative bg */
+  .hero-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.06;
+  }
+
+  /* SERVICES */
+  .section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fire);
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--coal);
+  }
+
+  .section-lead {
+    color: var(--smoke);
+    font-size: 1rem;
+    max-width: 320px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .service-card:hover { background: var(--mist); }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--fire-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-icon svg { width: 22px; height: 22px; color: var(--fire); }
+
+  .service-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--coal);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.875rem;
+    color: var(--smoke);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .service-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fire);
+    background: var(--fire-light);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* STRIP — AI Feature */
+  .ai-strip {
+    background: var(--coal);
+    color: white;
+    padding: 5rem 3rem;
+  }
+
+  .ai-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .ai-strip h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .ai-strip h2 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .ai-strip p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .ai-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ai-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+  }
+
+  .ai-features li::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20,6 9,17 4,12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .ai-visual {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    font-family: 'DM Sans', monospace;
+    font-size: 0.8rem;
+  }
+
+  .ai-terminal-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+  }
+
+  .ai-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .ai-dot.r { background: #FF5F56; }
+  .ai-dot.y { background: #FFBD2E; }
+  .ai-dot.g { background: #27C93F; }
+
+  .ai-line {
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .ai-line.cmd { color: var(--accent); }
+  .ai-line.out { color: rgba(255,255,255,0.8); padding-left: 1.2rem; }
+  .ai-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--accent);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* TEAM */
+  .team-section {
+    background: var(--mist);
+    padding: 6rem 3rem;
+  }
+
+  .team-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .team-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+
+  .team-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--fire-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--fire);
+  }
+
+  .team-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--coal);
+    margin-bottom: 0.3rem;
+  }
+
+  .team-card .role {
+    font-size: 0.78rem;
+    color: var(--smoke);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .contact-section h2 { margin-bottom: 1rem; }
+
+  .contact-section p {
+    color: var(--smoke);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.25rem 1.5rem;
+    background: var(--mist);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--coal);
+    transition: background 0.2s;
+  }
+
+  .contact-method:hover { background: var(--fire-light); }
+
+  .contact-method-icon {
+    width: 38px;
+    height: 38px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+
+  .contact-method-icon svg { width: 18px; height: 18px; color: var(--fire); }
+
+  .contact-method-text strong {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--coal);
+  }
+
+  .contact-method-text span {
+    font-size: 0.8rem;
+    color: var(--smoke);
+  }
+
+  /* Remote support box */
+  .remote-box {
+    background: var(--coal);
+    border-radius: 20px;
+    padding: 2.5rem;
+    color: white;
+    text-align: center;
+  }
+
+  .remote-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .remote-box p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .remote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--fire);
+    color: white;
+    text-decoration: none;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+
+  .remote-btn:hover { background: var(--accent); }
+
+  .remote-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .footer-logo span {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--coal);
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--smoke);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--smoke);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--fire); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 3rem; }
+    .hero-right { min-height: 300px; }
+    .hero-stat-cards { flex-direction: row; flex-wrap: wrap; padding: 2rem 1.5rem; }
+    .stat-card:nth-child(2), .stat-card:nth-child(3) { margin-left: 0; }
+    .section { padding: 4rem 1.5rem; }
+    .section-header { flex-direction: column; align-items: flex-start; }
+    .services-grid { grid-template-columns: 1fr; }
+    .ai-strip-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .ai-strip { padding: 4rem 1.5rem; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .team-section { padding: 4rem 1.5rem; }
+    .contact-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+
+  /* FADE IN ANIMATION */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="flame" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2C14 2 8 8 8 14C8 17.3 10.7 20 14 20C17.3 20 20 17.3 20 14C20 11.5 18.5 9.5 17 8C17 8 17.5 11 16 12C16 12 15 9 14 7C14 7 12 10 13 14C11.5 13 11 11 11 11C10 12.5 10 13.5 10 14C10 16.2 11.8 18 14 18C16.2 18 18 16.2 18 14C18 11 16 9 14 7C14 5.5 14 2 14 2Z" fill="#E8480C"/>
+    </svg>
+    <span>SureFire Engineering</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ai">Local AI</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Denver, CO &amp; Surrounding Areas</div>
+    <h1>IT that works<br>as hard as<br><em>you do.</em></h1>
+    <p class="hero-sub">SureFire Engineering delivers reliable managed IT, networking, cloud, and local AI services for homes and businesses across the Denver metro area.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        Get in Touch
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+      </a>
+      <a href="#services" class="btn-secondary">
+        View Services
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+      </a>
+    </div>
+    <div class="hero-location">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Based in Denver, CO — serving the greater metro area
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stat-cards">
+      <div class="stat-card featured">
+        <div class="stat-label">Response Time</div>
+        <div class="stat-value">Fast</div>
+        <div class="stat-desc">Remote &amp; on-site support</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Services Offered</div>
+        <div class="stat-value">10+</div>
+        <div class="stat-desc">IT, cloud, networking &amp; AI</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Coverage Area</div>
+        <div class="stat-value">Denver</div>
+        <div class="stat-desc">Metro &amp; surrounding region</div>
+      </div>
+    </div>
+    <!-- decorative -->
+    <div class="hero-bg-circle" style="width:400px;height:400px;background:var(--fire);bottom:-100px;right:-100px;"></div>
+    <div class="hero-bg-circle" style="width:200px;height:200px;background:var(--coal);top:40px;right:200px;"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section">
+    <div class="section-header fade-up">
+      <div>
+        <div class="section-eyebrow">What We Do</div>
+        <h2>Services built<br>for the real world</h2>
+      </div>
+      <p class="section-lead">From home office troubleshooting to enterprise networking — we've got you covered.</p>
+    </div>
+
+    <div class="services-grid fade-up">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>IT Support</h3>
+        <p>Reliable tech support for homes and small businesses. Troubleshooting, setups, upgrades, and day-to-day problem solving.</p>
+        <span class="service-badge">Home &amp; Business</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Cloud Hosting &amp; Support</h3>
+        <p>Public cloud infrastructure setup, monitoring, and ongoing management. Keep your services running smoothly in the cloud.</p>
+        <span class="service-badge">AWS · Azure · GCP</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Business Email &amp; Web</h3>
+        <p>Professional email setup, domain configuration, and website hosting. Make a strong first impression online.</p>
+        <span class="service-badge">Setup &amp; Management</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Cisco CUCM</h3>
+        <p>Expert configuration and management of Cisco Unified Communications Manager for business telephony environments.</p>
+        <span class="service-badge">Voice &amp; UC</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <h3>Network Configuration</h3>
+        <p>Design and deploy reliable, secure networks using Cisco, Ubiquiti, and Meraki — from small offices to complex deployments.</p>
+        <span class="service-badge">Cisco · Ubiquiti · Meraki</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg>
+        </div>
+        <h3>Remote Support</h3>
+        <p>Fast remote assistance via TeamViewer. We resolve most issues without ever leaving your team stranded.</p>
+        <a href="https://898.tv/sfeco" target="_blank" class="service-badge" style="text-decoration:none;">Start Session →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI STRIP -->
+<section id="ai" class="ai-strip">
+  <div class="ai-strip-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow" style="color:var(--accent);">New Capability</div>
+      <h2>Local <em>AI</em><br>Integrations</h2>
+      <p>We help Denver-area businesses deploy private, on-premise AI — keeping your data local, your workflows smarter, and your costs predictable. No cloud dependency required.</p>
+      <ul class="ai-features">
+        <li>Private LLM deployment on your own hardware</li>
+        <li>AI-powered automation for business workflows</li>
+        <li>Local document search and knowledge bases</li>
+        <li>Custom integrations with your existing tools</li>
+        <li>Data stays on your premises — always</li>
+      </ul>
+    </div>
+    <div class="ai-visual fade-up">
+      <div class="ai-terminal-bar">
+        <div class="ai-dot r"></div>
+        <div class="ai-dot y"></div>
+        <div class="ai-dot g"></div>
+      </div>
+      <div class="ai-line">$ ollama serve --local</div>
+      <div class="ai-line out">✓ Model loaded: llama3 (8B)</div>
+      <div class="ai-line out">✓ Listening on 0.0.0.0:11434</div>
+      <div class="ai-line out">✓ GPU acceleration: enabled</div>
+      <div class="ai-line" style="margin-top:0.75rem;">$ sfe-deploy --rag ./company-docs</div>
+      <div class="ai-line out">✓ Indexed 1,247 documents</div>
+      <div class="ai-line out">✓ Vector store ready</div>
+      <div class="ai-line out">✓ Private AI assistant live</div>
+      <div class="ai-line" style="margin-top:0.75rem; color:rgba(255,255,255,0.3);"># Your data. Your hardware. Your AI.</div>
+      <div class="ai-line" style="margin-top:0.4rem;">$ <span class="ai-cursor"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="team-section">
+  <div class="team-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Our People</div>
+      <h2>The team behind<br>every solution</h2>
+    </div>
+    <div class="team-grid fade-up">
+      <div class="team-card">
+        <div class="team-avatar">KL</div>
+        <h3>Kris Lyvers</h3>
+        <div class="role">Director of Engineering</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">JW</div>
+        <h3>Joel Wampler</h3>
+        <div class="role">System Architect &amp; Lead Developer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DS</div>
+        <h3>Damon Sasso</h3>
+        <div class="role">Systems Engineer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SA</div>
+        <h3>Scott Austin</h3>
+        <div class="role">Systems Engineer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-section">
+    <div class="fade-up">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2>Let's solve your<br>next challenge</h2>
+      <p>Whether you need a quick fix or a long-term technology partner, we're here for it. Reach out and let's talk about what your home or business needs.</p>
+      <div class="contact-methods">
+        <a href="mailto:github@SureFireEng.com" class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-method-text">
+            <strong>Email Us</strong>
+            <span>github@SureFireEng.com</span>
+          </div>
+        </a>
+        <a href="https://898.tv/sfeco" target="_blank" class="contact-method">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.277A1 1 0 0121 8.656v6.688a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          </div>
+          <div class="contact-method-text">
+            <strong>Remote Support Session</strong>
+            <span>898.tv/sfeco — powered by TeamViewer</span>
+          </div>
+        </a>
+        <div class="contact-method" style="cursor:default;">
+          <div class="contact-method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-method-text">
+            <strong>Denver, Colorado</strong>
+            <span>Serving the greater metro area</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="remote-box fade-up">
+      <h3>Need help right now?</h3>
+      <p>Start a remote support session instantly. Our team will connect and get you sorted in no time.</p>
+      <a href="https://898.tv/sfeco" target="_blank" class="remote-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.277A1 1 0 0121 8.656v6.688a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Start Remote Session
+      </a>
+      <p class="remote-sub">Opens TeamViewer — 898.tv/sfeco</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">
+    <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2C14 2 8 8 8 14C8 17.3 10.7 20 14 20C17.3 20 20 17.3 20 14C20 11.5 18.5 9.5 17 8C17 8 17.5 11 16 12C16 12 15 9 14 7C14 7 12 10 13 14C11.5 13 11 11 11 11C10 12.5 10 13.5 10 14C10 16.2 11.8 18 14 18C16.2 18 18 16.2 18 14C18 11 16 9 14 7C14 5.5 14 2 14 2Z" fill="#E8480C"/>
+    </svg>
+    <span>SureFire Engineering</span>
+  </a>
+  <span class="footer-copy">© 2025 SureFire Engineering. Denver, CO.</span>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#ai">Local AI</a>
+    <a href="#team">Team</a>
+    <a href="mailto:github@SureFireEng.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
